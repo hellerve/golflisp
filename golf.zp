@@ -1,0 +1,29 @@
+(define w write)
+(define d display)
+(define % mod)
+(define ? eq?)
+
+(define-syntax Σ
+  (syntax-rules ()
+    ((Σ args ...)
+      (for args ...))))
+
+(define-syntax Ο
+    (syntax-rules (χ)
+        ((Ο (χ result1 result2 ...))
+         ((lambda () result1 result2 ...))) 
+        ((Ο (test)) test)
+        ((Ο (test) clause1 clause2 ...)
+         (let ((temp test))
+           (if temp
+             temp
+             (Ο clause1 clause2 ...))))
+        ((Ο (test result1 result2 ...))
+         (if test ((lambda () result1 result2 ...)))) 
+        ((Ο (test result1 result2 ...)
+               clause1 clause2 ...)
+         (if test
+           ((lambda () result1 result2 ...)) 
+           (Ο clause1 clause2 ...)))))
+
+(define (n? a) (= a 0))

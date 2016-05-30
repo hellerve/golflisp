@@ -1,0 +1,4 @@
+(load "golf")
+
+(if (eq? (length zepto:args) 1)
+  (load (head zepto:args)))
