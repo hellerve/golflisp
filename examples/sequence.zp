@@ -1,0 +1,2 @@
+; http://codegolf.stackexchange.com/questions/80858/alternating-sign-sequence
+(* (c (/. n 3)) (-s (% n 3)))

@@ -27,3 +27,11 @@
            (Ο clause1 clause2 ...)))))
 
 (define (n? a) (= a 0))
+(define s sub1)
+(define (-s x) (- 1 x))
+(define a add1)
+(define c ceil)
+(define c->i char->integer)
+(define i->c integer->char)
+(define n->s number->string)
+(define s->n string->number)
